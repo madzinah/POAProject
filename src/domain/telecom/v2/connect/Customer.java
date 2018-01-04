@@ -2,7 +2,7 @@ package domain.telecom.v2.connect;
 
 import java.util.Set;
 
-import domain.telecom.v2.unicity.UniqueId;
+import crosscut.telecom.v2.unicity.UniqueId;
 import domain.telecom.v2.util.Contract;
 
 public class Customer implements ICustomer {
