@@ -17,7 +17,7 @@ public enum SimulationMessages {
         }
     },
     
-    CUSTOMER_HANGUP("%1$s raccroche%2$s %3$s") {
+    CUSTOMER_HANGUP("%1$s raccroche %2$s %3$s") {
         @Override public String format(JoinPoint jp) {
             ICustomer target = (ICustomer) jp.getTarget();
             ICall call = target.getCall();

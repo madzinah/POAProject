@@ -3,7 +3,7 @@ package domain.telecom.v2.connect;
 import java.util.Set;
 
 /**
- * Modélise un appel entre un appelant et un ou plusieurs correspondants.
+ * ModÃ©lise un appel entre un appelant et un ou plusieurs correspondants.
  * @inv
  *     getCaller() != null
  *     getReceivers() != null
@@ -27,7 +27,7 @@ public interface ICall {
     // REQUETES
 
     /**
-     * Le client à l'origine de l'appel.
+     * Le client Ã  l'origine de l'appel.
      */
     ICustomer getCaller();
     
@@ -37,8 +37,8 @@ public interface ICall {
     Set<ICustomer> getReceivers();
 
     /**
-     * Indique si le client x a été contacté par l'appelant et n'a pas encore
-     *  répondu ou est en communication avec lui.
+     * Indique si le client x a Ã©tÃ© contactÃ© par l'appelant et n'a pas encore
+     *  rÃ©pondu ou est en communication avec lui.
      * @pre
      *     x != null
      */
@@ -60,7 +60,7 @@ public interface ICall {
     // COMMANDES
     
     /**
-     * Appelle un autre corresponsant (mode conférence).
+     * Appelle un autre corresponsant (mode confï¿½rence).
      * @pre
      *     x != null
      *     x != getCaller()
@@ -85,7 +85,7 @@ public interface ICall {
     void hangUp(ICustomer x);
 
     /**
-     * Démarre une communication entre getCaller() et r lorsqu'il décroche.
+     * Dï¿½marre une communication entre getCaller() et r lorsqu'il dï¿½croche.
      * @pre
      *     r != null
      *     r != getCaller()
