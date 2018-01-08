@@ -3,7 +3,7 @@ package telecom.v1.connect;
 import java.util.Set;
 
 /**
- * ModÈlise un appel entre un appelant et un ou plusieurs correspondants.
+ * Mod√©lise un appel entre un appelant et un ou plusieurs correspondants.
  * @inv
  *     getCaller() != null
  *     getReceivers() != null
@@ -33,7 +33,7 @@ public interface ICall {
     // REQUETES
     
     /**
-     * Le client ‡ l'origine de l'appel.
+     * Le client √† l'origine de l'appel.
      */
     ICustomer getCaller();
     
@@ -44,11 +44,11 @@ public interface ICall {
     
     /**
      * Le temps de connexion de ce client.
-     * Si celui-ci na pas ÈtÈ contactÈ pour cet appel, la valeur retournÈe est
+     * Si celui-ci na pas √©t√© contact√© pour cet appel, la valeur retourn√©e est
      *  0.
-     * Si celui-ci est l'appelant, la valeur retournÈe est la somme des durÈes
-     *  de communication pour chacun des correspondant appelÈs qui ont rÈpondu
-     *  et dÈj‡ raccrochÈ.
+     * Si celui-ci est l'appelant, la valeur retourn√©e est la somme des dur√©es
+     *  de communication pour chacun des correspondant appel√©s qui ont r√©pondu
+     *  et d√©j√† raccroch√©.
      * @pre
      *     x != null && !isConnectedWith(x)
      */
@@ -60,8 +60,8 @@ public interface ICall {
     Set<ICustomer> getReceivers();
 
     /**
-     * Indique si le client x a ÈtÈ contactÈ par l'appelant et n'a pas encore
-     *  rÈpondu ou est en communication avec lui.
+     * Indique si le client x a √©t√© contact√© par l'appelant et n'a pas encore
+     *  r√©pondu ou est en communication avec lui.
      * @pre
      *     x != null
      */
@@ -83,7 +83,7 @@ public interface ICall {
     // COMMANDES
     
     /**
-     * Appelle un autre corresponsant (mode confÈrence).
+     * Appelle un autre corresponsant (mode conf√©rence).
      * @pre
      *     x != null
      *     x != getCaller()
@@ -102,18 +102,18 @@ public interface ICall {
      * @post
      *     x == getCaller()
      *         ==> forall y:ICustomer : !includes(y)
-     *             getElapsedTimeFor(x) == la somme des durÈes passÈes avec
+     *             getElapsedTimeFor(x) == la somme des dur√©es pass√©es avec
      *                                     tous les correspondants
      *     x != getCaller()
      *         ==> getReceivers().size() == old getReceivers().size() - 1
      *             !includes(x)
-     *             getElapsedTimeFor(x) == le temps passÈ par getCaller()
-     *                                     ‡ communiquer avec x
+     *             getElapsedTimeFor(x) == le temps pass√© par getCaller()
+     *                                     √† communiquer avec x
      */
     void hangUp(ICustomer x);
 
     /**
-     * DÈmarre une communication entre getCaller() et r lorsqu'il dÈcroche.
+     * D√©marre une communication entre getCaller() et r lorsqu'il d√©croche.
      * @pre
      *     r != null
      *     r != getCaller()

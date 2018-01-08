@@ -9,8 +9,8 @@ public class Simulation {
     // ATTRIBUTS
     
     /**
-     * Définit la durée réelle d'une seconde (en ms).
-     * Une seconde dans la simulation dure 0.1 seconde dans la réalité.
+     * DÃ©finit la durÃ©e rÃ©elle d'une seconde (en ms).
+     * Une seconde dans la simulation dure 0.1 seconde dans la rÃ©alitÃ©.
      */
     public static final int SECOND_DURATION = 100;
     private static final String SEP = "------------------";
@@ -29,7 +29,7 @@ public class Simulation {
     // OUTILS
     
     private void report(ICustomer c) {
-        String msg = c + " a été connecté " + c.getTotalConnectedTime() + " s";
+        String msg = c + " a Ã©tÃ© connectÃ© " + c.getTotalConnectedTime() + " s";
         if (c.getCall() != null) {
             msg += " (encore en communication : " + c.getCall() + ")";
         }
@@ -38,11 +38,11 @@ public class Simulation {
     }
     
     /**
-     * Une communication établie par A avec B et C.
+     * Une communication Ã©tablie par A avec B et C.
      * A appelle B.
-     * B décroche.
+     * B dÃ©croche.
      * A appelle C.
-     * C décroche.
+     * C dÃ©croche.
      * A raccroche.
      */
     private void runTest1() {
@@ -54,13 +54,13 @@ public class Simulation {
         a.call(b);
         ICall call = a.getCall();
         wait(1.0);
-        say("B décroche...");
+        say("B dÃ©croche...");
         b.pickUp(call);
         wait(2.0);
-        say("A appelle C (mode conférence)...");
+        say("A appelle C (mode confÃ©rence)...");
         a.call(c);
         wait(1.0);
-        say("C décroche...");
+        say("C dÃ©croche...");
         c.pickUp(call);
         wait(3.0);
         say("A raccroche...");
@@ -72,9 +72,9 @@ public class Simulation {
     }
     
     /**
-     * Une communication établie par D avec E.
+     * Une communication Ã©tablie par D avec E.
      * D appelle E.
-     * E décroche.
+     * E dÃ©croche.
      * E raccroche.
      */
     private void runTest2() {
@@ -85,7 +85,7 @@ public class Simulation {
         d.call(e);
         ICall call = d.getCall();
         wait(1.0);
-        say("E décroche...");
+        say("E dÃ©croche...");
         e.pickUp(call);
         wait(3.0);
         say("E raccroche...");
@@ -96,10 +96,10 @@ public class Simulation {
     }
     
     /**
-     * Une communication établie par F avec G et H.
+     * Une communication Ã©tablie par F avec G et H.
      * F appelle G.
-     * G décroche.
-     * F appelle H qui ne décroche pas.
+     * G dÃ©croche.
+     * F appelle H qui ne dÃ©croche pas.
      * G raccroche.
      * (F reste en attente de H et la communication est en suspens)
      */
@@ -112,7 +112,7 @@ public class Simulation {
         f.call(g);
         ICall call = f.getCall();
         wait(1.0);
-        say("G décroche...");
+        say("G dÃ©croche...");
         g.pickUp(call);
         wait(2.0);
         say("F appelle H...");

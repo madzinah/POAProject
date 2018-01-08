@@ -48,14 +48,14 @@ class Connection {
     }
     
     /**
-     * L'état de cette connexion.
+     * L'Ã©tat de cette connexion.
      */
     State getState() {
         return state;
     }
     
     /**
-     * Durée de la connexion.
+     * DurÃ©e de la connexion.
      * @pre
      *     getState() == State.DROPPED
      */
@@ -66,7 +66,7 @@ class Connection {
     }
     
     /**
-     * Le tarif à l'unité de la connexion.
+     * Le tarif Ã  l'unitÃ© de la connexion.
      */
     int getRate() {
         return type.rate;
@@ -86,7 +86,7 @@ class Connection {
     // COMMANDES
     
     /**
-     * Met à jour la connexion lorsque le client receveur décroche.
+     * Met Ã  jour la connexion lorsque le client receveur dÃ©croche.
      * @pre
      *     getState() == State.PENDING
      * @post
@@ -97,11 +97,11 @@ class Connection {
 
         state = State.COMPLETE;
         timer.start();
-        System.err.println("connexion établie");
+        System.err.println("connexion Ã©tablie");
     }
     
     /**
-     * Met à jour la connexion lorsque l'un des clients raccroche.
+     * Met Ã  jour la connexion lorsque l'un des clients raccroche.
      * @pre
      *     getState() != State.DROPPED
      * @post
@@ -112,7 +112,7 @@ class Connection {
 
         state = State.DROPPED;
         timer.stop();
-        System.err.println("connexion terminée");
+        System.err.println("connexion terminÃ©e");
     }
     
     // OUTILS

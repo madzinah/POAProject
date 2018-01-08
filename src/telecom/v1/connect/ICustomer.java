@@ -1,9 +1,9 @@
 package telecom.v1.connect;
 
 /**
- * Un client est caractÈrisÈ par son nom.
- * Il peut appeler un autre client, dÈcrocher, raccrocher et inviter d'autres
- *  clients ‡ un appel en cours.
+ * Un client est caract√©ris√© par son nom.
+ * Il peut appeler un autre client, d√©crocher, raccrocher et inviter d'autres
+ *  clients √† un appel en cours.
  * @inv
  *     getName() != null && !"".equals(getName())
  *     x.getName().equals(getName()) <==> x == this
@@ -19,7 +19,7 @@ package telecom.v1.connect;
  *     $ARGS$ String n, int ac
  *     $PRE$
  *         n != null && !"".equals(n)
- *         n n'est pas dÈj‡ pris
+ *         n n'est pas d√©j√† pris
  *         ac >= 0
  *     $POST$
  *         getName().equals(n)
@@ -33,7 +33,7 @@ public interface ICustomer {
     // REQUETES
     
     /**
-     * La zone gÈographique du client.
+     * La zone g√©ographique du client.
      */
     int getAreaCode();
 
@@ -59,14 +59,14 @@ public interface ICustomer {
     int getTotalConnectedTime();
 
     /**
-     * DÈtermine si ce client est en communication avec x.
+     * D√©termine si ce client est en communication avec x.
      * @pre
      *     x != null
      */
     boolean isCalling(ICustomer x);
     
     /**
-     * Indique si ce client est libre ou occupÈ.
+     * Indique si ce client est libre ou occup√©.
      */
     boolean isFree();
 
@@ -74,9 +74,9 @@ public interface ICustomer {
     
     /**
      * Appelle le client x.
-     * Si x est occupÈ, l'appel n'aboutit pas : aucune nouvelle connexion n'est
+     * Si x est occup√©, l'appel n'aboutit pas : aucune nouvelle connexion n'est
      *  mise en place.
-     * Si ce client est dÈj‡ en communication, il s'agit d'une confÈrence.
+     * Si ce client est d√©j√† en communication, il s'agit d'une conf√©rence.
      * @pre
      *     x != null && x != this
      *     isFree() || getCall().getCaller() == this
@@ -108,7 +108,7 @@ public interface ICustomer {
     void hangUp();
 
     /**
-     * RÈpond ‡ un appel.
+     * R√©pond √† un appel.
      * @pre
      *     c != null && c.includes(this)
      *     isFree()

@@ -22,7 +22,7 @@ public class Timer {
 
     // REQUETES
     /**
-     * Il faut avoir démarré puis arrêté le Timer pour obtenir le temps.
+     * Il faut avoir dÃ©marrÃ© puis arrÃªtÃ© le Timer pour obtenir le temps.
      */
     public int getTime() {
         Contract.checkCondition(isStopped());
@@ -30,13 +30,13 @@ public class Timer {
         return (int) ((stopTime - startTime) / SECOND_DURATION);
     }
     /**
-     * Indique si le timer a été démarré et pas encore arrêté.
+     * Indique si le timer a Ã©tÃ© dÃ©marrÃ© et pas encore arrÃªtÃ©.
      */
     public boolean isStarted() {
         return startTime != NOT_YET_STARTED && stopTime == NOT_YET_STOPPED;
     }
     /**
-     * Indique si le timer a été démarré puis arrêté.
+     * Indique si le timer a Ã©tÃ© dÃ©marrÃ© puis arrÃªtÃ©.
      */
     public boolean isStopped() {
         return startTime != NOT_YET_STARTED && stopTime != NOT_YET_STOPPED;
@@ -44,22 +44,22 @@ public class Timer {
 
     // COMMANDES
     /**
-     * On peut démarrer le Timer tout le temps.
-     * Si on avait déjà démarré, on réinitialise.
+     * On peut dÃ©marrer le Timer tout le temps.
+     * Si on avait dÃ©jÃ  dÃ©marrÃ©, on rÃ©initialise.
      */
     public void start() {
         startTime = System.currentTimeMillis();
         stopTime = NOT_YET_STOPPED;
-        System.err.println("Timer démarré : " + startTime);
+        System.err.println("Timer dÃ©marrÃ© : " + startTime);
     }
 
     /**
-     * Il faut avoir démarré et pas arrêté le Timer pour pouvoir l'arrêter.
+     * Il faut avoir dÃ©marrÃ© et pas arrÃªtÃ© le Timer pour pouvoir l'arrÃªter.
      */
     public void stop() {
         Contract.checkCondition(isStarted());
         
         stopTime = System.currentTimeMillis();
-        System.err.println("Timer arrêté : " + stopTime);
+        System.err.println("Timer arrÃªtÃ© : " + stopTime);
     }
 }

@@ -33,7 +33,7 @@ public enum SimulationMessages {
         }
     },
     
-    CUSTOMER_PICKUP("%1$s décroche à l'appel de %2$s %3$s") {
+    CUSTOMER_PICKUP("%1$s dÃ©croche Ã  l'appel de %2$s %3$s") {
         @Override public String format(JoinPoint jp) {
             ICall call = (ICall) jp.getArgs()[0];
             ICustomer caller = call.getCaller();
@@ -76,7 +76,7 @@ public enum SimulationMessages {
         }
     },
     
-    CALL_INVITE("%1$s est invité à une conférence par %2$s %3$s") {
+    CALL_INVITE("%1$s est invitÃ© Ã  une confÃ©rence par %2$s %3$s") {
         @Override public String format(JoinPoint jp) {
             ICall call = (ICall) jp.getTarget();
             ICustomer caller = call.getCaller();
@@ -87,7 +87,7 @@ public enum SimulationMessages {
         }
     },
     
-    CALL_HANGUP("%1$s se déconnecte %2$s") {
+    CALL_HANGUP("%1$s se dÃ©connecte %2$s") {
         @Override public String format(JoinPoint jp) {
             ICall call = (ICall) jp.getTarget();
             ICustomer caller = call.getCaller();
@@ -100,7 +100,7 @@ public enum SimulationMessages {
         }
     },
     
-    CALL_PICKUP("%1$s se connecte à %2$s %3$s") {
+    CALL_PICKUP("%1$s se connecte Ã  %2$s %3$s") {
         @Override public String format(JoinPoint jp) {
             ICall call = (ICall) jp.getTarget();
             ICustomer caller = call.getCaller();

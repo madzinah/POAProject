@@ -22,8 +22,8 @@ public privileged aspect Pointcuts {
 	
 	private static final Set<String> uniqueIdSet = new HashSet<String>();
 
-	declare error : set(@UniqueId !final * *.*) || get(@UniqueId !final * *.*): "Erreur, l'attribut doit �tre final";
-	declare error : set(@UniqueId !String *.*) || get(@UniqueId !String *.*): "Erreur, l'attribut doit �tre une String";
+	declare error : set(@UniqueId !final * *.*) || get(@UniqueId !final * *.*): "Erreur, l'attribut doit être final";
+	declare error : set(@UniqueId !String *.*) || get(@UniqueId !String *.*): "Erreur, l'attribut doit être une String";
 	
 	pointcut UniqueAssignment(String s) : set(@UniqueId * *.*) && args(s);
 	
