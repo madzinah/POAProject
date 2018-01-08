@@ -8,6 +8,7 @@ import crosscut.telecom.v2.unicity.UniqueId;
 import domain.telecom.v2.util.NotUniqueException;
 import telecom.v1.util.Contract;
 import domain.telecom.v2.connect.ICustomer;
+import crosscut.telecom.v2.billing.*;
 
 public privileged aspect Pointcuts {
 	
@@ -21,8 +22,8 @@ public privileged aspect Pointcuts {
 	
 	private static final Set<String> uniqueIdSet = new HashSet<String>();
 
-	declare error : set(@UniqueId !final * *.*) || get(@UniqueId !final * *.*): "Erreur, l'attribut doit être final";
-	declare error : set(@UniqueId !String *.*) || get(@UniqueId !String *.*): "Erreur, l'attribut doit être une String";
+	declare error : set(@UniqueId !final * *.*) || get(@UniqueId !final * *.*): "Erreur, l'attribut doit ï¿½tre final";
+	declare error : set(@UniqueId !String *.*) || get(@UniqueId !String *.*): "Erreur, l'attribut doit ï¿½tre une String";
 	
 	pointcut UniqueAssignment(String s) : set(@UniqueId * *.*) && args(s);
 	
@@ -97,29 +98,4 @@ public privileged aspect Pointcuts {
 		c.caller.addTime(c.getDuration());
 		c.caller.addCharge(c.getPrice());
 	}
-	
-	/**
-	 * Billing
-	 */
-	
-	private int ICustomer.charge;
-	
-	int domain.telecom.v2.connect.Connection.getRate() {
-        return type.rate;
-    }
-	
-	int domain.telecom.v2.connect.Connection.getPrice() {
-        Contract.checkCondition(state == State.DROPPED);
-
-        return getDuration() * getRate();
-    }
-	
-	void ICustomer.addCharge(int addedCharge) {
-		charge += addedCharge;
-	}
-	
-	int ICustomer.getCharge() {
-		return charge;
-	}
-	
 }

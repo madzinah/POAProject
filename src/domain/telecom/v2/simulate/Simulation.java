@@ -9,8 +9,8 @@ public class Simulation {
     // ATTRIBUTS
 
     /**
-     * Définit la durée réelle d'une seconde (en ms).
-     * Une seconde dans la simulation dure 0.1 seconde dans la réalité.
+     * Dï¿½finit la durï¿½e rï¿½elle d'une seconde (en ms).
+     * Une seconde dans la simulation dure 0.1 seconde dans la rï¿½alitï¿½.
      */
     public static final int SECOND_DURATION = 100;
 
@@ -31,6 +31,7 @@ public class Simulation {
         ICustomer a = new Customer("A", 76000);
         ICustomer b = new Customer("B", 76000);
         ICustomer c = new Customer("C", 34000);
+//        ICustomer doublon = new Customer("A", 58000);
 
         a.call(b);
         ICall call = a.getCall();
@@ -73,7 +74,7 @@ public class Simulation {
 
     /**
      * Attend delay secondes.
-     * En réalité, une seconde dans la simulation dure 0.1 seconde.
+     * En rï¿½alitï¿½, une seconde dans la simulation dure 0.1 seconde.
      */
     private void wait(double delay) {
         Object dummy = new Object();
